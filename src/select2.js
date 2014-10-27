@@ -10,6 +10,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
   if (uiSelect2Config) {
     angular.extend(options, uiSelect2Config);
   }
+
   return {
     require: 'ngModel',
     priority: 1,
@@ -151,7 +152,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
             // Set the view and model value and update the angular template manually for the ajax/multiple select2.
             elm.bind("change", function (e) {
               e.stopImmediatePropagation();
-              
+
               if (scope.$$phase || scope.$root.$$phase) {
                 return;
               }
